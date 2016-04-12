@@ -12,6 +12,18 @@ package practicalab01;
  */
 public class PracticaLab01 {
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
+    
+    String nombre;
+    
+
     /**
      * @param args the command line arguments
      */
