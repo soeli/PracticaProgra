@@ -17,6 +17,8 @@ public class RegistroEstudiantes extends javax.swing.JFrame {
      */
     public RegistroEstudiantes() {
         initComponents();
+        this.setLocation(500, 300);
+        
     }
 
     /**
@@ -28,19 +30,31 @@ public class RegistroEstudiantes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Titulo = new javax.swing.JLabel();
+        botones2 = new Vista.Botones();
         Girasol = new javax.swing.JLabel();
+        informacionEstudiantes1 = new Vista.InformacionEstudiantes();
         FondoBlanco = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(615, 490));
         getContentPane().setLayout(null);
+
+        Titulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PracticaLab01/Of.Registro.png"))); // NOI18N
+        getContentPane().add(Titulo);
+        Titulo.setBounds(20, 10, 540, 140);
+        getContentPane().add(botones2);
+        botones2.setBounds(20, 310, 590, 140);
 
         Girasol.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PracticaLab01/GirasolUCR.png"))); // NOI18N
         getContentPane().add(Girasol);
-        Girasol.setBounds(380, 0, 236, 472);
+        Girasol.setBounds(390, 0, 236, 472);
+        getContentPane().add(informacionEstudiantes1);
+        informacionEstudiantes1.setBounds(100, 140, 280, 160);
 
-        FondoBlanco.setBackground(new java.awt.Color(255, 255, 255));
+        FondoBlanco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PracticaLab01/FondoBlanco.png"))); // NOI18N
         getContentPane().add(FondoBlanco);
-        FondoBlanco.setBounds(4, 4, 610, 470);
+        FondoBlanco.setBounds(0, 0, 620, 470);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -83,5 +97,8 @@ public class RegistroEstudiantes extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel FondoBlanco;
     private javax.swing.JLabel Girasol;
+    private javax.swing.JLabel Titulo;
+    private Vista.Botones botones2;
+    private Vista.InformacionEstudiantes informacionEstudiantes1;
     // End of variables declaration//GEN-END:variables
 }

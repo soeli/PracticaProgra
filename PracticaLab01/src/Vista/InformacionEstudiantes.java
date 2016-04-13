@@ -35,46 +35,26 @@ public class InformacionEstudiantes extends javax.swing.JPanel {
         jl_Nombre = new javax.swing.JLabel();
         jl_DIreccion = new javax.swing.JLabel();
 
+        setOpaque(false);
+        setLayout(null);
+        add(jt_Cedula);
+        jt_Cedula.setBounds(120, 20, 102, 20);
+        add(jt_Nombre);
+        jt_Nombre.setBounds(120, 50, 102, 20);
+        add(jt_Direccion);
+        jt_Direccion.setBounds(120, 90, 102, 20);
+
         jl_Cedula.setText("Cédula");
+        add(jl_Cedula);
+        jl_Cedula.setBounds(23, 26, 60, 14);
 
         jl_Nombre.setText("Nombre");
+        add(jl_Nombre);
+        jl_Nombre.setBounds(23, 57, 70, 14);
 
         jl_DIreccion.setText("Dirección");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jl_Cedula)
-                    .addComponent(jl_Nombre)
-                    .addComponent(jl_DIreccion))
-                .addGap(38, 38, 38)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jt_Cedula, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
-                    .addComponent(jt_Nombre)
-                    .addComponent(jt_Direccion))
-                .addContainerGap(100, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jt_Cedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jl_Cedula))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jt_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jl_Nombre))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jt_Direccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jl_DIreccion))
-                .addContainerGap(19, Short.MAX_VALUE))
-        );
+        add(jl_DIreccion);
+        jl_DIreccion.setBounds(23, 88, 70, 14);
     }// </editor-fold>//GEN-END:initComponents
 
 

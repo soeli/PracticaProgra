@@ -6,6 +6,8 @@
 
 package Vista;
 
+import Controlador.ControladorEstudiantes;
+
 /**
  *
  * @author SOFIA ELIZONDO
@@ -15,8 +17,36 @@ public class Botones extends javax.swing.JPanel {
     /**
      * Creates new form Botones
      */
+    
+    ControladorEstudiantes controlador;
+    
     public Botones() {
         initComponents();
+    }
+    
+    public void agregarEventos(ControladorEstudiantes controlador)
+    {
+        this.controlador=controlador;
+        this.jbt_Buscar.addActionListener(controlador);
+        this.jlb_Agregar.addActionListener(controlador);
+        this.jlb_Modificar.addActionListener(controlador);
+        this.jlb_Eliminar.addActionListener(controlador);
+    }
+    
+    public void habilitarAgregar()
+    {
+        this.jlb_Agregar.setEnabled(true);
+        this.jbt_Buscar.setEnabled(true);
+        this.jlb_Eliminar.setEnabled(true);
+        this.jlb_Modificar.setEnabled(true);
+    }
+    
+    public void estadoInicial()
+    {
+        this.jlb_Agregar.setEnabled(false);
+        this.jbt_Buscar.setEnabled(true);
+        this.jlb_Eliminar.setEnabled(false);
+        this.jlb_Modificar.setEnabled(false);
     }
 
     /**
@@ -33,39 +63,58 @@ public class Botones extends javax.swing.JPanel {
         jlb_Modificar = new javax.swing.JButton();
         jlb_Eliminar = new javax.swing.JButton();
 
-        setLayout(null);
+        setOpaque(false);
 
         jbt_Buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PracticaLab01/Buscar.png"))); // NOI18N
         jbt_Buscar.setActionCommand("Buscar");
         jbt_Buscar.setBorderPainted(false);
         jbt_Buscar.setContentAreaFilled(false);
         jbt_Buscar.setDefaultCapable(false);
-        add(jbt_Buscar);
-        jbt_Buscar.setBounds(220, 40, 131, 107);
 
         jlb_Agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PracticaLab01/agregar.png"))); // NOI18N
         jlb_Agregar.setActionCommand("Agregar");
         jlb_Agregar.setBorderPainted(false);
         jlb_Agregar.setContentAreaFilled(false);
         jlb_Agregar.setDefaultCapable(false);
-        add(jlb_Agregar);
-        jlb_Agregar.setBounds(10, 190, 131, 107);
 
         jlb_Modificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PracticaLab01/Modificar.png"))); // NOI18N
         jlb_Modificar.setActionCommand("Modificar");
         jlb_Modificar.setBorderPainted(false);
         jlb_Modificar.setContentAreaFilled(false);
         jlb_Modificar.setDefaultCapable(false);
-        add(jlb_Modificar);
-        jlb_Modificar.setBounds(220, 180, 131, 107);
 
         jlb_Eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PracticaLab01/Borrar.png"))); // NOI18N
         jlb_Eliminar.setActionCommand("Eliminar");
         jlb_Eliminar.setBorderPainted(false);
         jlb_Eliminar.setContentAreaFilled(false);
         jlb_Eliminar.setDefaultCapable(false);
-        add(jlb_Eliminar);
-        jlb_Eliminar.setBounds(20, 350, 131, 107);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jbt_Buscar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jlb_Agregar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jlb_Modificar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jlb_Eliminar)
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jlb_Eliminar)
+                    .addComponent(jbt_Buscar)
+                    .addComponent(jlb_Agregar)
+                    .addComponent(jlb_Modificar))
+                .addContainerGap(368, Short.MAX_VALUE))
+        );
     }// </editor-fold>//GEN-END:initComponents
 
 
