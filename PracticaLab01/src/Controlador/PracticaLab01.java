@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package practicalab01;
+package Controlador;
 
 /**
  *
@@ -14,7 +14,7 @@ public class PracticaLab01 {
 
     
     
-    String nombre;
+  
     
 
     /**
