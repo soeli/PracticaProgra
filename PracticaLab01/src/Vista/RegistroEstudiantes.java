@@ -6,6 +6,8 @@
 
 package Vista;
 
+import Controlador.ControladorEstudiantes;
+
 /**
  *
  * @author SOFIA ELIZONDO
@@ -15,9 +17,14 @@ public class RegistroEstudiantes extends javax.swing.JFrame {
     /**
      * Creates new form RegistroEstudiantes
      */
+    
+    ControladorEstudiantes controlador;
     public RegistroEstudiantes() {
         initComponents();
         this.setLocation(500, 300);
+        setVisible(false);
+        controlador=new ControladorEstudiantes(this);
+        botones2.agregarEventos(controlador);
         
     }
 

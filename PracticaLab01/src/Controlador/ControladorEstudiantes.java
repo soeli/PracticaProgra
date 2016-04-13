@@ -16,7 +16,13 @@ import java.awt.event.ActionListener;
  */
 public class ControladorEstudiantes implements ActionListener{
     
+   RegistroEstudiantes registroEstudiantes;
     
+    public ControladorEstudiantes(RegistroEstudiantes registroEstudiantes)
+    {
+        this.registroEstudiantes=registroEstudiantes;
+       // metodos = new MetodosEstudiantes();
+    }
     
     public void actionPerformed(ActionEvent e)
     {
