@@ -18,6 +18,27 @@ public class InformacionEstudiantes extends javax.swing.JPanel {
     public InformacionEstudiantes() {
         initComponents();
     }
+    
+    public String[] devolverInformacion()
+    {
+        String arreglo[];
+        arreglo=new String[3];
+        arreglo[0]=this.jt_Cedula.getText();
+        arreglo[1]=this.jt_Nombre.getText();
+        arreglo[2]=this.jt_Direccion.getText();
+        
+        return arreglo;
+    }
+    public String devolverCedula()
+    {
+        return this.jt_Cedula.getText();
+    }
+    public void mostrarInformacion(String arreglo[])
+    {
+        this.jt_Nombre.setText(arreglo[0]);
+        this.jt_Direccion.setText(arreglo[1]);
+        
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

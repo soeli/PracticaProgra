@@ -46,6 +46,20 @@ public class RegistroEstudiantes extends javax.swing.JFrame {
         this.botones2.estadoInicial();
     }
     
+    public String[] devolverInformacion()
+    {
+        return informacionEstudiantes1.devolverInformacion();
+    }
+    public String devolverCedula()
+    {
+        return informacionEstudiantes1.devolverCedula();
+    }
+    public void mostrarInformacion(String arreglo[])
+    {
+        //informacionEstudiantes1.mostrarInformacion(arreglo[]);
+        
+    }
+    
     
     
     /**
