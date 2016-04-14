@@ -16,7 +16,7 @@ public class Estudiantes {
     String direccion;
     String nombre;
 
-    public Estudiantes(String cedula, String direccion, String nombre) {
+    public Estudiantes(String cedula, String nombre, String direccion) {
         this.cedula = cedula;
         this.direccion = direccion;
         this.nombre = nombre;

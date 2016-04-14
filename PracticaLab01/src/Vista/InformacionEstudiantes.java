@@ -6,6 +6,8 @@
 
 package Vista;
 
+import com.sun.glass.events.KeyEvent;
+
 /**
  *
  * @author SOFIA ELIZONDO
@@ -39,7 +41,36 @@ public class InformacionEstudiantes extends javax.swing.JPanel {
         this.jt_Direccion.setText(arreglo[1]);
         
     }
+    
+    public void blanquear()
+    {
+        this.jt_Nombre.setText("");
+        this.jt_Cedula.setText("");
+        this.jt_Direccion.setText("");
+    }
 
+    
+    public void habilitarAgregar()
+    {
+        this.jt_Cedula.setEnabled(true);
+        this.jt_Direccion.setEnabled(true);
+        this.jt_Nombre.setEnabled(true);
+    }
+    
+    public void habilitarModificar()
+    {
+        this.jt_Cedula.setEnabled(false);
+        this.jt_Direccion.setEnabled(true);
+        this.jt_Nombre.setEnabled(true);
+    }
+    
+    
+    public void estadoInicial()
+    {
+        this.jt_Cedula.setEnabled(true);
+        this.jt_Direccion.setEnabled(false);
+        this.jt_Nombre.setEnabled(false);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -57,26 +88,67 @@ public class InformacionEstudiantes extends javax.swing.JPanel {
         jl_DIreccion = new javax.swing.JLabel();
 
         setOpaque(false);
-        setLayout(null);
-        add(jt_Cedula);
-        jt_Cedula.setBounds(120, 20, 102, 20);
-        add(jt_Nombre);
-        jt_Nombre.setBounds(120, 50, 102, 20);
-        add(jt_Direccion);
-        jt_Direccion.setBounds(120, 90, 102, 20);
+
+        jt_Cedula.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jt_Cedula.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jt_CedulaKeyPressed(evt);
+            }
+        });
 
         jl_Cedula.setText("Cédula");
-        add(jl_Cedula);
-        jl_Cedula.setBounds(23, 26, 60, 14);
 
         jl_Nombre.setText("Nombre");
-        add(jl_Nombre);
-        jl_Nombre.setBounds(23, 57, 70, 14);
 
         jl_DIreccion.setText("Dirección");
-        add(jl_DIreccion);
-        jl_DIreccion.setBounds(23, 88, 70, 14);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jl_Cedula, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(37, 37, 37)
+                        .addComponent(jt_Cedula, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jl_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jl_DIreccion, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(27, 27, 27)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jt_Direccion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jt_Nombre, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jl_Cedula))
+                    .addComponent(jt_Cedula, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jt_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jl_Nombre))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jt_Direccion, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jl_DIreccion))
+                .addContainerGap())
+        );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jt_CedulaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jt_CedulaKeyPressed
+        if(evt.getKeyCode()==KeyEvent.VK_ENTER)
+        {
+            
+        }
+    }//GEN-LAST:event_jt_CedulaKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

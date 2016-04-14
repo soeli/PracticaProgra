@@ -31,30 +31,72 @@ public class ControladorEstudiantes implements ActionListener{
         {
             if(metodos.consultarEstudiante(registroEstudiantes.devolverCedula()))
            {
-               registroEstudiantes.mostrarInformacion(metodos.getArregloInformacion());
+               registroEstudiantes.mostrarInformacion(metodos.mostrarInformacion(registroEstudiantes.devolverCedula()));
+               registroEstudiantes.habilitarModificar();
             }
            else
             {
-                System.out.println("No se encontró el curso");
+                registroEstudiantes.mostrarMensaje("Estudiante no existe");
+                System.out.println("No se encontró el estudiante");
+                registroEstudiantes.habilitarAgregar();
            }
             System.out.println("Buscar");
         }
         if(e.getActionCommand().equals("Agregar"))
-        {
-           System.out.println("Agregar");
-           metodos.agregarEstudiante(registroEstudiantes.devolverInformacion()); 
+        {               
+               if(metodos.consultarEstudiante(registroEstudiantes.devolverCedula()))
+           {
+               registroEstudiantes.mostrarMensaje("Estudiante registrado");
+                System.out.println("Estudiante registrado");
+                registroEstudiantes.estadoInicial();
+            }
+           else
+            {
+                metodos.agregarEstudiante(registroEstudiantes.devolverInformacion());
+                registroEstudiantes.mostrarMensaje("Estudiante agregado");
+                registroEstudiantes.estadoInicial();
+           }
+            
+            System.out.println("Agregar");
+            
         }
         if(e.getActionCommand().equals("Modificar"))
         {
-            metodos.modificarEstudiante(registroEstudiantes.devolverInformacion());
+            if(metodos.consultarEstudiante(registroEstudiantes.devolverCedula()))
+           {
+               metodos.modificarEstudiante(registroEstudiantes.devolverInformacion());
+               registroEstudiantes.mostrarMensaje("Estudiante modificado");
+               registroEstudiantes.estadoInicial();
+               
+            }
+           else
+            {
+                registroEstudiantes.mostrarMensaje("Estudiante no existe");
+                System.out.println("No se encontró el estudiante");
+                
+           }
             System.out.println("Modificar");
         }
         if(e.getActionCommand().equals("Eliminar"))
         {
-            metodos.eliminarEstudiante(registroEstudiantes.devolverInformacion());
+            
+            if(metodos.consultarEstudiante(registroEstudiantes.devolverCedula()))
+           {
+               metodos.eliminarEstudiante(registroEstudiantes.devolverInformacion());
+               registroEstudiantes.mostrarMensaje("Estudiante eliminado");
+               registroEstudiantes.estadoInicial();
+            }
+           else
+            {
+                registroEstudiantes.mostrarMensaje("Estudiante no existe");
+                System.out.println("No se encontró el estudiante");
+                registroEstudiantes.estadoInicial();
+           }
             System.out.println("Eliminar");
         }
     
     }
+    
+   
     
 }

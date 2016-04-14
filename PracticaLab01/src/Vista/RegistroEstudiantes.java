@@ -26,8 +26,7 @@ public class RegistroEstudiantes extends javax.swing.JFrame {
         setVisible(false);
         controlador=new ControladorEstudiantes(this);
         botones2.agregarEventos(controlador);
-        //this.botones2.estadoInicial();
-        
+        estadoInicial();
         
     }
     
@@ -35,16 +34,27 @@ public class RegistroEstudiantes extends javax.swing.JFrame {
     {
         JOptionPane.showMessageDialog(null, mensaje);
     }
+
     
     public void habilitarAgregar()
     {
         this.botones2.habilitarAgregar();
+        this.informacionEstudiantes1.habilitarAgregar();
     }
 
     public void estadoInicial()
     {
         this.botones2.estadoInicial();
+        this.informacionEstudiantes1.blanquear();
+        this.informacionEstudiantes1.estadoInicial();
     }
+    
+    public void habilitarModificar()
+    {
+        this.botones2.habilitarModificar();
+        this.informacionEstudiantes1.habilitarModificar();
+    }
+    
     
     public String[] devolverInformacion()
     {
@@ -56,7 +66,7 @@ public class RegistroEstudiantes extends javax.swing.JFrame {
     }
     public void mostrarInformacion(String arreglo[])
     {
-        //informacionEstudiantes1.mostrarInformacion(arreglo[]);
+        informacionEstudiantes1.mostrarInformacion(arreglo);
         
     }
     

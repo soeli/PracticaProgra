@@ -37,9 +37,18 @@ public class Botones extends javax.swing.JPanel {
     {
         this.jlb_Agregar.setEnabled(true);
         this.jbt_Buscar.setEnabled(true);
+        this.jlb_Eliminar.setEnabled(false);
+        this.jlb_Modificar.setEnabled(false);
+    }
+    
+    public void habilitarModificar()
+    {
+        this.jlb_Agregar.setEnabled(true);
+        this.jbt_Buscar.setEnabled(true);
         this.jlb_Eliminar.setEnabled(true);
         this.jlb_Modificar.setEnabled(true);
     }
+    
     
     public void estadoInicial()
     {

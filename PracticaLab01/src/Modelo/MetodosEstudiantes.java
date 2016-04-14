@@ -6,6 +6,8 @@
 
 package Modelo;
 
+import Controlador.ControladorEstudiantes;
+import Vista.RegistroEstudiantes;
 import java.util.ArrayList;
 
 /**
@@ -18,6 +20,8 @@ public class MetodosEstudiantes {
     private ArrayList <Estudiantes> arrayEstudiantes;
     String arregloInformacionConsultada[]=new String[2];
     
+    ControladorEstudiantes controladorEstudiantes;
+    
     public MetodosEstudiantes()
     {
         arrayEstudiantes=new ArrayList <Estudiantes>();
@@ -27,16 +31,23 @@ public class MetodosEstudiantes {
         Estudiantes temporal=new Estudiantes(informacion[0], informacion[1], informacion[2]);
         arrayEstudiantes.add(temporal);
         
-    }
-    public void mostrarInformacion()
-    {
-        for(int contador=0;contador<arrayEstudiantes.size();contador++)
-        {
-            System.out.println(arrayEstudiantes.get(contador).getInformacion());
         
-        }
-    
     }
+    public String[] mostrarInformacion(String cedula)
+    {
+//        for(int contador=0;contador<arrayEstudiantes.size();contador++)
+//        {
+//            System.out.println(arrayEstudiantes.get(contador).getInformacion());
+//        }
+        if(this.consultarEstudiante(cedula))
+        {
+            
+        }
+        return this.arregloInformacionConsultada;
+        
+    }
+    
+    
     public boolean consultarEstudiante(String cedula)
     {
         boolean existe=false;
@@ -72,6 +83,7 @@ public class MetodosEstudiantes {
             if(arrayEstudiantes.get(contador).getCedula().equals(arreglo[0]))
             {
                 arrayEstudiantes.remove(contador);
+                
             }
         }
     }
