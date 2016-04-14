@@ -6,7 +6,9 @@
 
 package Vista;
 
-import com.sun.glass.events.KeyEvent;
+import Controlador.ControladorEstudiantes;
+
+
 
 /**
  *
@@ -17,6 +19,7 @@ public class InformacionEstudiantes extends javax.swing.JPanel {
     /**
      * Creates new form InformacionEstudiantes
      */
+    ControladorEstudiantes controlador;
     public InformacionEstudiantes() {
         initComponents();
     }
@@ -144,10 +147,11 @@ public class InformacionEstudiantes extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jt_CedulaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jt_CedulaKeyPressed
-        if(evt.getKeyCode()==KeyEvent.VK_ENTER)
-        {
-            
-        }
+        if(evt.getKeyCode()==10)
+         {
+            controlador.buscar();
+            System.out.println("Buscar");      
+    }
     }//GEN-LAST:event_jt_CedulaKeyPressed
 
 

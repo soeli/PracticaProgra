@@ -34,7 +34,6 @@ public class RegistroEstudiantes extends javax.swing.JFrame {
     {
         JOptionPane.showMessageDialog(null, mensaje);
     }
-
     
     public void habilitarAgregar()
     {

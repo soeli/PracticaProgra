@@ -29,19 +29,10 @@ public class ControladorEstudiantes implements ActionListener{
     {
         if(e.getActionCommand().equals("Buscar"))
         {
-            if(metodos.consultarEstudiante(registroEstudiantes.devolverCedula()))
-           {
-               registroEstudiantes.mostrarInformacion(metodos.mostrarInformacion(registroEstudiantes.devolverCedula()));
-               registroEstudiantes.habilitarModificar();
-            }
-           else
-            {
-                registroEstudiantes.mostrarMensaje("Estudiante no existe");
-                System.out.println("No se encontró el estudiante");
-                registroEstudiantes.habilitarAgregar();
-           }
-            System.out.println("Buscar");
+        buscar();
         }
+        
+        
         if(e.getActionCommand().equals("Agregar"))
         {               
                if(metodos.consultarEstudiante(registroEstudiantes.devolverCedula()))
@@ -96,6 +87,25 @@ public class ControladorEstudiantes implements ActionListener{
         }
     
     }
+    
+    public void buscar()
+    {
+
+        if(metodos.consultarEstudiante(registroEstudiantes.devolverCedula()))
+       {
+           registroEstudiantes.mostrarInformacion(metodos.mostrarInformacion(registroEstudiantes.devolverCedula()));
+           registroEstudiantes.habilitarModificar();
+        }
+       else
+        {
+            registroEstudiantes.mostrarMensaje("Estudiante no existe");
+            System.out.println("No se encontró el estudiante");
+            registroEstudiantes.habilitarAgregar();
+       }
+        System.out.println("Buscar");
+    }
+    
+    
     
    
     
