@@ -23,6 +23,7 @@ public class ControladorEstudiantes implements ActionListener{
     {
         this.registroEstudiantes=registroEstudiantes;
         metodos = new MetodosEstudiantes();
+        
     }
     
     public void actionPerformed(ActionEvent e)

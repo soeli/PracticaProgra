@@ -26,6 +26,8 @@ public class MetodosEstudiantes {
     {
         arrayEstudiantes=new ArrayList <Estudiantes>();
     }
+    
+    
     public void agregarEstudiante(String informacion[])
     {
         Estudiantes temporal=new Estudiantes(informacion[0], informacion[1], informacion[2]);
@@ -35,16 +37,11 @@ public class MetodosEstudiantes {
     }
     public String[] mostrarInformacion(String cedula)
     {
-//        for(int contador=0;contador<arrayEstudiantes.size();contador++)
-//        {
-//            System.out.println(arrayEstudiantes.get(contador).getInformacion());
-//        }
         if(this.consultarEstudiante(cedula))
         {
             
         }
-        return this.arregloInformacionConsultada;
-        
+        return this.arregloInformacionConsultada; 
     }
     
     

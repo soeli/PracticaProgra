@@ -79,6 +79,11 @@ public class Botones extends javax.swing.JPanel {
         jbt_Buscar.setBorderPainted(false);
         jbt_Buscar.setContentAreaFilled(false);
         jbt_Buscar.setDefaultCapable(false);
+        jbt_Buscar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jbt_BuscarKeyPressed(evt);
+            }
+        });
 
         jlb_Agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PracticaLab01/agregar.png"))); // NOI18N
         jlb_Agregar.setActionCommand("Agregar");
@@ -125,6 +130,14 @@ public class Botones extends javax.swing.JPanel {
                 .addContainerGap(368, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jbt_BuscarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jbt_BuscarKeyPressed
+        if(evt.getKeyCode()==10)
+         {
+            controlador.buscar();
+            System.out.println("Buscar");      
+    }
+    }//GEN-LAST:event_jbt_BuscarKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
