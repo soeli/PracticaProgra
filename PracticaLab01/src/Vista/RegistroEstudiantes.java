@@ -7,6 +7,7 @@
 package Vista;
 
 import Controlador.ControladorEstudiantes;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -25,9 +26,28 @@ public class RegistroEstudiantes extends javax.swing.JFrame {
         setVisible(false);
         controlador=new ControladorEstudiantes(this);
         botones2.agregarEventos(controlador);
+        //this.botones2.estadoInicial();
+        
         
     }
+    
+    public void mostrarMensaje(String mensaje)
+    {
+        JOptionPane.showMessageDialog(null, mensaje);
+    }
+    
+    public void habilitarAgregar()
+    {
+        this.botones2.habilitarAgregar();
+    }
 
+    public void estadoInicial()
+    {
+        this.botones2.estadoInicial();
+    }
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

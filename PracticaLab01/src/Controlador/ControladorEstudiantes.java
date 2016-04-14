@@ -6,6 +6,7 @@
 
 package Controlador;
 
+import Modelo.MetodosEstudiantes;
 import Vista.RegistroEstudiantes;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,11 +18,12 @@ import java.awt.event.ActionListener;
 public class ControladorEstudiantes implements ActionListener{
     
    RegistroEstudiantes registroEstudiantes;
+   MetodosEstudiantes metodos;
     
     public ControladorEstudiantes(RegistroEstudiantes registroEstudiantes)
     {
         this.registroEstudiantes=registroEstudiantes;
-       // metodos = new MetodosEstudiantes();
+        metodos = new MetodosEstudiantes();
     }
     
     public void actionPerformed(ActionEvent e)
@@ -41,6 +43,7 @@ public class ControladorEstudiantes implements ActionListener{
         if(e.getActionCommand().equals("Agregar"))
         {
            System.out.println("Agregar");
+           //metodos.agregarEstudiante(informacion); este metodo no funciona, porque sofia no sabe como hacerlo, solo pasa copiando y en el examen no lo va a poder hacer
         }
         if(e.getActionCommand().equals("Modificar"))
         {
